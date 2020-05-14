@@ -72,6 +72,7 @@ export function createCustomFormioComponent(customComponentOptions: FormioCustom
 
     renderElement(value: any, index: number) {
       const info = this.inputInfo;
+      console.log('renderElement');
       return this.renderTemplate(customComponentOptions.template || 'input', {
         input: info,
         value,
@@ -80,6 +81,7 @@ export function createCustomFormioComponent(customComponentOptions: FormioCustom
     }
 
     attach(element: HTMLElement) {
+      console.log('attach');
       let superAttach = super.attach(element);
 
       this._customAngularElement = element.querySelector(customComponentOptions.selector);
